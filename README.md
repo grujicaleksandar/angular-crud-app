@@ -1,4 +1,4 @@
-# NgFCRUDapp
+# NgCRUDapp
 
 Simple CRUD app without any external server.
 

@@ -1,0 +1,66 @@
+<div class="container">
+    <h2>List of Users</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>State</th>
+            <th>Action</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.state}}</td>
+            <th><button (click)="deleteUser(user.id)">Delete</button>&nbsp;<button (click)="showEditUserForm(user.id)">Edit</button></th>
+        </tr>
+
+    </table>
+
+    <div *ngIf="doEditUser">
+        <h2>Edit User</h2>
+        <form (submit)="editUser(user)">
+            <br>
+            <label>ID</label>
+            <input type="text" name="id" [(ngModel)]="user.id" value='user.id'>
+            <br><br>
+            <label>Name</label>
+            <input type="text" name="name" [(ngModel)]="user.name" value='user.name'>
+            <br><br>
+            <label>Email</label>
+            <input type="text" name="email" [(ngModel)]="user.email" value='user.email'>
+            <br><br>
+            <label>State</label>
+            <input type="text" name="state" [(ngModel)]="user.state" value='user.state'>
+            <br><br>
+            <input type="submit" value="Edit User" (click)="doEditUser = !doEditUser">
+
+
+        </form>
+    </div>
+    <br><br>
+    <button (click)="showAddUserForm()">Add User</button>
+    <br>
+    <div *ngIf="showAddUser">
+        <form (submit)="addUser(user)">
+            <br>
+            <label>ID</label>
+            <input type="text" name="id" [(ngModel)]="user.id">
+            <br><br>
+            <label>Name</label>
+            <input type="text" name="name" [(ngModel)]="user.name">
+            <br><br>
+            <label>Email</label>
+            <input type="text" name="email" [(ngModel)]="user.email">
+            <br><br>
+            <label>State</label>
+            <input type="text" name="state" [(ngModel)]="user.state">
+            <br><br>
+            <input type="submit" value="Add User">
+
+
+        </form>
+    </div>
+
+</div>

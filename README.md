@@ -1,6 +1,6 @@
 # NgCRUDapp
 
-Simple CRUD app without any external server.
+Simple CRUD app without external server.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.0.
 
